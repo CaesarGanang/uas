@@ -24,8 +24,6 @@ public class ListMhsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listmhs);
 
-        // ListView lvData = (ListView) findViewById(R.id.lvData);
-
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         ArrayList<Mhs> mhsList = getIntent().getExtras().getParcelableArrayList("mhsList");
@@ -73,12 +71,5 @@ public class ListMhsActivity extends AppCompatActivity {
                 startActivity(new Intent(ListMhsActivity.this, MainActivity.class));
             }
         });
-
-//        if (mhsList.isEmpty()) {
-//            mhsList.add("No Data");
-//        }
-
-//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, nameData);
-//        lvData.setAdapter(arrayAdapter);
     }
 }
