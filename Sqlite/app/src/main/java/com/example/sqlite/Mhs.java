@@ -15,6 +15,7 @@ public class Mhs implements Parcelable {
         this.nim = nim;
         this.noHp = noHp;
     }
+    
 
     public int getId() {
         return id;
