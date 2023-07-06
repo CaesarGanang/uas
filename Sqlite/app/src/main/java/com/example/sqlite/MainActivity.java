@@ -52,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
                 String name = inpName.getText().toString();
                 String nim = inpNim.getText().toString();
                 String phone = inpNoHp.getText().toString();
-
+                mhsList = db.list();
+                if  (mhsList.size() >= 5) {
+                    Toast.makeText(getApplicationContext(), "Data tidak boleh melebihi 5!", Toast.LENGTH_SHORT).show();
+                } else {
+                }
                 if  (name.isEmpty() || nim.isEmpty() || phone.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Please Fill input Field!", Toast.LENGTH_SHORT).show();
                 } else {
@@ -65,16 +69,18 @@ public class MainActivity extends AppCompatActivity {
                         inpName.setText("");
                         inpNim.setText("");
                         inpNoHp.setText("");
+
                     } else {
                         mm = new Mhs(mm.getId(), name, nim, phone);
                         stts = db.ubah(mm);
                     }
 
-                    if(stts){
+                    if (stts) {
                         Toast.makeText(getApplicationContext(), "Data Saved!", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(getApplicationContext(), "Data Failed to Save!", Toast.LENGTH_SHORT).show();
                     }
+                }
 
                     // intentList.putParcelableArrayListExtra("mhsList", mhsList);
                     // startActivity(intentList);
