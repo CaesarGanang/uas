@@ -81,9 +81,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Data Failed to Save!", Toast.LENGTH_SHORT).show();
                     }
                 }
-
-                    // intentList.putParcelableArrayListExtra("mhsList", mhsList);
-                    // startActivity(intentList);
                 }
             }
         });
